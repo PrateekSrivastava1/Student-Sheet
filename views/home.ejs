@@ -1,0 +1,12 @@
+<%- include("partials/header"); -%>
+    <h1>Home</h1>
+
+    <%  newListItems.forEach(function(item){ %>
+      <div class="">
+        <h4><%= item.name  %></h4>
+        <p><%= item.class  %></p>
+        <p><%= item.rollno  %></p>
+      </div>
+      <%  }) %>
+
+<%- include("partials/footer"); -%>

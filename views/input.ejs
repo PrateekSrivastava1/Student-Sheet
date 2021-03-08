@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+    <h1>Home</h1>
+
+<form class="" action="/input" method="post">
+
+  <div class="form-group">
+    <label>Name</label>
+        <input class="form-control" type="text" name="postName">
+    <label>Class</label>
+        <input class="form-control" type="text" name="postClass">
+    <label>Roll No:</label>
+        <input class="form-control" type="text" name="postRollno">
+  </div>
+  <button class="btn btn-primary" type="submit" name="button">Submit</button>
+</form>
+
+<%- include("partials/footer"); -%>
