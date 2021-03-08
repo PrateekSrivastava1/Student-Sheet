@@ -6,7 +6,6 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }))
 mongoose.connect("mongodb://localhost:27017/studentsheet", {useNewUrlParser: true});
@@ -79,12 +78,13 @@ app.get("/input", function(req, res){
 
 app.post("/input",  function(req, res){
   const insertedItem = req.body.newItem;
+
   const item = new Item({
-    name: req.body.name,
-    class:req.body.class,
-    rollno:req.body.rollno
+    name: req.body.postName,
+    class:req.body.postClass,
+    rollno:req.body.postRollno
   });
-  console.log(item.name);
+  console.log(item);
   defaultItems.push(item);
   item.save();
   res.redirect("/");
